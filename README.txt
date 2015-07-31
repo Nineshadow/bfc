@@ -10,7 +10,7 @@ ________________________________________________________________________________
 HOW TO USE :
 bfc.exe generates an assembly source file which can then be compiled into an executable.
 To generate this assembly soure file :
-(while in the same directory as bfkc.exe)
+(while in the same directory as bfc.exe)
 
 bfc.exe <input_file> <output_file>
 
@@ -20,6 +20,12 @@ g++ -o <name_of_exec> <asm_source>
 
 You can also use help to get these instructions :
 bfc.exe help
+
+Or, to skip these 2 steps, you can use compile.exe.
+The syntax is the same :
+compile.exe <input_file> <output_file>
+Still a little buggy.
+
 
 _________________________________________________________________________________________
 
