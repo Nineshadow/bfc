@@ -1,0 +1,42 @@
+#Increment value at pointer (+)
+###############################
+movl	_i, %eax		
+movl	(%eax), %edx		
+incl	%edx		
+movl	%edx, (%eax)
+###############################
+#Decrement value at pointer (-)
+###############################
+movl	_i, %eax		
+movl	(%eax), %edx		
+decl	%edx		
+movl	%edx, (%eax)
+###############################
+#Increment pointer (>)
+###############################
+movl	_i, %eax
+addl	$4, %eax
+movl	%eax, _i
+###############################
+#Decrement pointer (<)
+movl	_i, %eax
+subl	$4, %eax
+movl	%eax, _i
+###############################
+#Output value at pointer (.)
+###############################
+movl	_i, %eax
+movl	(%eax), %eax
+movl	%eax, (%esp)
+movl	$__ZSt4cout, %ecx
+call	__ZNSolsEi
+subl	$4, %esp
+###############################
+#Input into value at pointer(,)
+###############################
+movl	_i, %eax
+movl	%eax, (%esp)
+movl	$__ZSt3cin, %ecx
+call	__ZNSirsERi
+subl	$4, %esp
+###############################
