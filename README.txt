@@ -1,7 +1,6 @@
 WHAT IS BFC?
 bfc is a brainfuck compiler which uses assembly and c++.
-Currently only works on Intel assembly(Windows).
-Still in early development.Doesn't support all features of brainfuck.
+
 ________________________________________________________________________________________
 
 Version : 0.9
@@ -35,7 +34,6 @@ ________________________________________________________________________________
 
 FEATURES :
 This compiler currently doesn't support all of the instructions that the brainfuck language has, as it's still very early in development.
-It doesn't support the loops ( '[' and ']'). I'm trying to implement those in assembly, and hopefully, I will manage to do it.
 Lists of currently supported instructions:
 '>' - increment pointer
 '<' - decrement pointer
