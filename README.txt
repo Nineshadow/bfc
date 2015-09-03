@@ -4,7 +4,7 @@ Currently only works on Intel assembly(Windows).
 Still in early development.Doesn't support all features of brainfuck.
 ________________________________________________________________________________________
 
-Version : 0.1
+Version : 0.9
 ________________________________________________________________________________________
 
 HOW TO USE :
@@ -94,3 +94,8 @@ ________________________________________________________________________________
 REASON OF PROJECT :
 For fun and to exercise with assembly.
 Also to test how github works :D .
+____________________________________________________________________________________________
+
+UPDATES :
+0.9 - second release, added loops, still only using integers. Version 1.0 will use characters. Also, please don't critique the jump from 0.1 to 0.9 directly. I feel like it's has an almos full feature set, hence the 0.9. 
+0.1 - first release, didn't have support for loops and only worked with integers

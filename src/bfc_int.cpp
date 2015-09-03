@@ -1,12 +1,18 @@
-/*
+-/*
 bfc - a Brainfuck compiler in c++ and assembly.
-Version 0.1.
+Version 0.9
 Doesn't support loops.
--N , 31.07.2015
+-N , 04.09.2015
 */
 #include <fstream>
 #include <iostream>
 #include <string>
+#include <vector>
+
+int loopID = 0;
+std::vector<int> loopStack(0);
+int endID;
+
 int main(int argc, char* argv[])
 {
     if(argc==3)
@@ -79,6 +85,21 @@ int main(int argc, char* argv[])
 	            "	movl	$__ZSt3cin, %ecx\n"
 	            "	call	__ZNSirsERi\n"
 	            "	subl	$4, %esp\n";
+                break;
+            case '[' :
+                loopID++;
+                loopStack.push_back(loopID);
+                out << ".loopStart"<<loopID<<":\n"
+                "	movl	_i, %eax\n"
+                "	movl	(%eax), %eax\n"
+                "	testl	%eax, %eax\n"
+                "	jz .LOOP" <<loopID<<"\n";
+                break;
+            case ']' :
+                endID = loopStack.back();
+                loopStack.pop_back();
+                out << "	jmp .loopStart" << endID<<"\n"
+                ".LOOP"<<endID << ":\n";
                 break;
             default :
                 break;
